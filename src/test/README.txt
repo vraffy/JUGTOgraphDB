@@ -23,19 +23,3 @@ Esecuzione dei test in GraphSandbox e verifica dei risultati tramite console di 
    In questo caso, ricordarsi di disconntersi dal database prima di procedere.
    
 8. Eseguire il test "testExtractDataFromDocument".
-
-
-Esempi tramite console
-======================
-
-Nella cartella "examples" si trovano alcuni esempi corrispondenti al grafo di esempio mostrato nella presentazione.
-
-* orient
-	- script OrientDB_createDB.osql --> contiene le istruzioni necessarie per generare il database di test
-	- script OrientDB_query.osql --> contiene alcuni esempi di query in "SQL" Orient
-	- script OrientDB_gremlin.osql --> contiene alcuni esempi di accesso ai dati tramite console gremlin
-	
-* sqlite
-	- script RDBMS_createDB.sql --> contiene le istruzioni necessarie per generare il database di test in un RDBMS (sqlite, per semplicità)
-	- script RDBMS_query.sql --> contiene due esempi di query in "SQL" per la "navigazione del grafo"
-    
