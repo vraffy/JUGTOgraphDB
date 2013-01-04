@@ -1,0 +1,33 @@
+# Esempio di utilizzo di gremline sul database creato dallo script "OrientDB_createDB.osql"
+
+# Avviare la console gremlin utilizzando il comando gremlin.sh (o gremlin.bat) presente nella directory /bin di Orient
+
+# Connessione al database
+g = new OrientGraph("local:<DB_URL>", "admin", "admin")
+
+# Elenco di tutti i vertici
+g.V
+
+# Elenco di tutti gli archi
+g.E
+
+# Visualizzazione di un vertice specifico (selezionato tramite l'id assegnato da Orient)
+g.v('8:0')
+g.v('8:0').map()
+
+# Visualizzazione di un arco specifico (selezionato tramite l'id assegnato da Orient)
+g.e('9:1')
+
+# Gli amici di Renzo
+g.v('8:2').out('amico').map()
+renzo = g.v('8:2')
+renzo.out('amico').transform{it.cod + " -->  " + it.nome + " " + it.cognome}
+
+# Gli amici degli amici di Renzo
+renzo.out('amico').out('amico').except([renzo]).transform{it.cod + " -->  " + it.nome + " " + it.cognome}
+
+# Gli amici di Renzo di cui conosciamo il cognome
+renzo.outE(label='amico').inV.filter(){it.cognome != null}.map()
+
+# Disconnesione dal database
+g.shutdown()

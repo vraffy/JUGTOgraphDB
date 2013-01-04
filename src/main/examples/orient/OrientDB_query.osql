@@ -1,0 +1,28 @@
+# Esempio di query "SQL" eseguite sul database creato dallo script "OrientDB_createDB.osql"
+
+# Avviare la console di Orient
+
+# Connessione al database
+connect local:<DB_URL> admin admin 
+
+# Elenco di tutti i vertici con le relative proprietà
+select from V
+
+# Elenco di tutti gli archi con le relative proprietà
+select from E
+
+# Selezione di un determinato vertice (tramite l'id assegnato da Orient)
+select from #8:0
+
+# Selezione di un determinato arco (tramite l'id assegnato da Orient)
+select from #9:1
+
+# Selezione di tutti gli amici di Renzo
+select out[label='amico'].in from #8:2
+select flatten(out[label='amico'].in) from #8:2
+
+# Chi è perseguitato da Don Rodrigo?
+select from V where in[label='stalker'].out.cod = 'don_rodrigo'
+
+
+

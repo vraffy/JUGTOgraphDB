@@ -5,8 +5,8 @@ Esecuzione dei test in GraphSandbox e verifica dei risultati tramite console di 
 
 2. Eseguire il test "testCreateGraphDB".
 
-3. Scaricare la versione "graphed" di OrientDB (la versione di riferimento utilizzata è la 1.1.0)
-	http://code.google.com/p/orient/downloads/detail?name=orientdb-graphed-1.0.zip&can=1&q=
+3. Scaricare la versione "graphed" di OrientDB (la versione di riferimento utilizzata è la 1.2.0)
+	http://code.google.com/p/orient/downloads/detail?name=orientdb-graphed-1.2.0.zip&can=1&q=
    scompattare semplicemente l'archivio e avviare la console di Orient (comando console.sh o console.bat, a seconda del sistema operativo utilizzato,
    presente nella directory bin).
    
@@ -23,4 +23,19 @@ Esecuzione dei test in GraphSandbox e verifica dei risultati tramite console di 
    In questo caso, ricordarsi di disconntersi dal database prima di procedere.
    
 8. Eseguire il test "testExtractDataFromDocument".
+
+
+Esempi tramite console
+======================
+
+Nella cartella "examples" si trovano alcuni esempi corrispondenti al grafo di esempio mostrato nella presentazione.
+
+* orient
+	- script OrientDB_createDB.osql --> contiene le istruzioni necessarie per generare il database di test
+	- script OrientDB_query.osql --> contiene alcuni esempi di query in "SQL" Orient
+	- script OrientDB_gremlin.osql --> contiene alcuni esempi di accesso ai dati tramite console gremlin
+	
+* sqlite
+	- script RDBMS_createDB.sql --> contiene le istruzioni necessarie per generare il database di test in un RDBMS (sqlite, per semplicità)
+	- script RDBMS_query.sql --> contiene due esempi di query in "SQL" per la "navigazione del grafo"
     

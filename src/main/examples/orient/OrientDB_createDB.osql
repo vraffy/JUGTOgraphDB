@@ -1,0 +1,50 @@
+# Avviare la console di Orient, come descritto nel file README.txt
+
+# Comando per la creazione di un nuovo database
+create database local:<DB_URL> admin admin local graph
+
+# Nota: una volta creato il database, la console ci connette automaticamente, 
+# non è quindi necessario utilizzare il comando di connect in questo caso. 
+
+# Creazione di un insieme di vertici con alcune proprietà
+# Nota: non è stato creato alcuno schema e non tutti i vertici hanno le stesse proprietà
+
+create vertex V set cod = 'perpetua', nome = 'Perpetua'
+create vertex V set cod = 'don_abbondio', nome = 'Abbondio', professione = 'curato'
+create vertex V set cod = 'renzo', nome = 'Renzo', cognome = 'Tramaglino', professione = 'filatore'
+create vertex V set cod = 'lucia', nome = 'Lucia', cognome = 'Mondella'
+create vertex V set cod = 'agnese', nome = 'Agnese'
+create vertex V set cod = 'fra_cristoforo', nome = 'Lodovico'
+create vertex V set cod = 'don_rodrigo', nome = 'Rodrigo'
+create vertex V set cod = 'griso', soprannome = 'Griso'
+create vertex V set cod = 'tonio', nome = 'Tonio'
+create vertex V set cod = 'conte_attilio', nome = 'Attilio'
+
+# Creazione di un insieme di archi che connettono i vertici creati in precedenza.
+# La definizione degli id degli archi assume che il database sia stao appena creato e che non siano
+# stati inseriti prima altri vertici oltre a quelli indicati.
+
+create edge E from #8:0 to #8:1 set label = 'dipendente'
+create edge E from #8:2 to #8:8 set label = 'amico'
+create edge E from #8:8 to #8:2 set label = 'amico'
+create edge E from #8:2 to #8:5 set label = 'amico'
+create edge E from #8:5 to #8:2 set label = 'amico'
+create edge E from #8:2 to #8:3 set label = 'amico'
+create edge E from #8:3 to #8:2 set label = 'amico'
+create edge E from #8:4 to #8:5 set label = 'amico'
+create edge E from #8:5 to #8:4 set label = 'amico'
+create edge E from #8:4 to #8:3 set label = 'parente'
+create edge E from #8:3 to #8:4 set label = 'parente'
+create edge E from #8:3 to #8:5 set label = 'amico'
+create edge E from #8:5 to #8:3 set label = 'amico'
+create edge E from #8:7 to #8:6 set label = 'dipendente'
+create edge E from #8:6 to #8:3 set label = 'stalker'
+create edge E from #8:6 to #8:9 set label = 'parente'
+create edge E from #8:9 to #8:6 set label = 'parente'
+
+# disconnessione dal database
+disconnect
+
+
+
+
